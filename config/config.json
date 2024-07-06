@@ -1,0 +1,14 @@
+{
+    "development": {
+      "url": "postgres://username:password@localhost:5432/databasename",
+      "dialect": "postgres"
+    },
+    "test": {
+      "url": "postgres://username:password@localhost:5432/test_databasename",
+      "dialect": "postgres"
+    },
+    "production": {
+      "url": process.env.DATABASE_URL,
+      "dialect": "postgres"
+    }
+  }
