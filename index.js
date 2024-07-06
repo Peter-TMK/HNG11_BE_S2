@@ -13,4 +13,4 @@ app.use("/api/auth", authRoutes);
 app.use("/api", protectedRoutes);
 
 const PORT = process.env.PORT;
-app.listen(PORT, () => console.log("server running on port 3333"));
+app.listen(PORT, () => console.log(`server running on port ${PORT}`));
