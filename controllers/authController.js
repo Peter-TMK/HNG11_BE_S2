@@ -10,9 +10,16 @@ exports.register = async (req, res) => {
   // Validation
   if (!firstName || !lastName || !email || !password) {
     return res.status(400).json({
-      status: "Bad request",
-      message: "Registration unsuccessful",
-      statusCode: 400,
+      // status: "Bad request",
+      // message: "Registration unsuccessful",
+      // statusCode: 400,
+      errors: [
+        { field: "email", message: "Email is required" },
+        { field: "password", message: "Password is required" },
+        { field: "firstName", message: "firstName is required" },
+        { field: "lastName", message: "lastName is required" },
+        { field: "phone", message: "phone is required" },
+      ],
     });
   }
 

@@ -7,8 +7,8 @@ const authenticateToken = (req, res, next) => {
 
   if (token == null) {
     return res.status(401).json({
-      status: "Unauthorized",
-      message: "No token provided",
+      status: "Bad Request",
+      message: "Authentication failed",
       statusCode: 401,
     });
   }
@@ -16,9 +16,9 @@ const authenticateToken = (req, res, next) => {
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
       return res.status(403).json({
-        status: "Forbidden",
-        message: "Invalid token",
-        statusCode: 403,
+        status: "Bad Request",
+        message: "Authentication failed",
+        statusCode: 401,
       });
     }
     req.user = user;
