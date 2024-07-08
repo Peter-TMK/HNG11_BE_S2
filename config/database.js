@@ -1,13 +1,13 @@
 const { Sequelize } = require("sequelize");
 require("dotenv").config();
 
-// const sequelize = new Sequelize(process.env.DATABASE_URL, {
+// const sequelize = new Sequelize(process.env.POSTGRESQL_ADDON_URI, {
 //   dialect: "postgres",
 //   protocol: "postgres",
 //   logging: false,
 // });
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const sequelize = new Sequelize(process.env.POSTGRESQL_ADDON_URI, {
   dialect: "postgres",
   protocol: "postgres",
   logging: false,
